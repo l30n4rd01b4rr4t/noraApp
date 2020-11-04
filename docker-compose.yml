@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: dbpass
+      MYSQL_DATABASE: noraapp
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: dbpass
+    ports:
+      - "9906:3306"
