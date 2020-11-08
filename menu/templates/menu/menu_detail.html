@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Nombre: {{ menu.title }}</h1>
+  <h1>Fecha: {{ menu.date }}</h1> 
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>¿Qué contiene?</h4>
+
+    {% for plate in menu.plate.all %}
+        <hr>
+        <p class="text-muted"><strong>Nombre:</strong> {{plate.title}}</p>
+    {% endfor %}
+  </div>
+{% endblock %}
