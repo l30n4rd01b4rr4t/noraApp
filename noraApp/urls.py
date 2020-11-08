@@ -21,5 +21,5 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('menu/', include('menu.urls')),
-    path('', RedirectView.as_view(url='/menu/', permanent=True)),
+    path('', RedirectView.as_view(url='/menu/login', permanent=True)),
 ] + staticfiles_urlpatterns()
