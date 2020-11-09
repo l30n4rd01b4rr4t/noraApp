@@ -8,12 +8,12 @@
 
       {% for menu in menu_list %}
       <li>
-        <a href="{{ menu.get_absolute_url }}">{{ menu.title }}</a>
+        <a href="{{ menu.get_absolute_url }}">{{ menu.title }}</a> <a href="{{ menu.get_edit_url }}">Edit</a>
       </li>
       {% endfor %}
 
     </ul>
     {% else %}
       <p>There are no menu.</p>
-    {% endif %}       
+    {% endif %}
 {% endblock %}

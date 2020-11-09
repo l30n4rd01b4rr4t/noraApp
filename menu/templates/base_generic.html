@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  {% block title %}<title>Local Library</title>{% endblock %}
+
+  {% block title %}<title>Nora's Menu</title>{% endblock %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+
   <!-- Add additional CSS in static file -->
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
@@ -23,7 +23,23 @@
       {% block sidebar %}
       <ul class="sidebar-nav">
           <li><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="{% url 'menu' %}">All menu</a></li>
+          {% if request.user.is_staff %}
+          <li>Manage Plates
+            <ul>
+              <li><a href="/menu/create-ingredient">Create Ingredient</a></li>
+              <li><a href="/menu/ingredient-list">List Ingredient</a></li>
+              <li><a href="/menu/create-plate">Create Plate</a></li>
+              <li><a href="/menu/plate-list">List Plate</a></li>
+            </ul>
+          </li>
+          <li>Manage Menu
+            <ul>
+              <li><a href="/menu/create-menu">Create Menu</a></li>
+              <li><a href="/menu/menu-list">List Menu</a></li>
+            </ul>
+          </li>
+          {% endif %}
+          <li><a href="{% url 'menu-list' %}">All menu</a></li>
           <li><a href="{% url 'logout' %}">Log out</a></li>
       </ul>
      {% endblock %}
