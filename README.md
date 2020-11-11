@@ -2,7 +2,7 @@
 
 ![technology Python](https://img.shields.io/badge/technology-python-orange.svg)
 
-## Primeros pasos
+## Primeros pasos en python :D
 
 ### Iniciar la aplicación
 
